@@ -12,14 +12,16 @@ import java.util.Collections;
  * @author 7
  */
 public class PerfumeList {
-    private  ArrayList <String> perfume;
+    private  ArrayList <String> perfume; // Lista para armazenar perfumes cadastrados
     public PerfumeList(){
         perfume = new ArrayList();
     }
+    //método para adicionar perfume
     public void adicionarPerfume(String nome){
         this.perfume.add(nome);
         System.out.println("Perfume adicionado com sucesso!");
     }
+    //método para substituir perfume
     public void mudarPerfume(String nomeAntigo, String novoNome){
         if (perfume.contains(nomeAntigo)) {
             int index = perfume.indexOf(nomeAntigo);
@@ -29,6 +31,7 @@ public class PerfumeList {
             System.out.println("Perfume não encontrado!");
         }
     }
+    //método para remover perfume
         public void removerPerfume(String nome){
             if (perfume.contains(nome)) {
             perfume.remove(nome);
@@ -37,6 +40,7 @@ public class PerfumeList {
             System.out.println("Perfume não encontrado!");
         }
         }
+        //método para listar todos os perfumes
         public void listarPerfumes(){
             if (perfume.isEmpty()) {
             System.out.println("Não há perfumes cadastrados no nosso gerenciador.");
@@ -47,7 +51,7 @@ public class PerfumeList {
             }
         }
     }
-        
+        //método para pesquisar perfume na lista
         public void buscarPerfume(String nome) {
         if (perfume.contains(nome)) {
             System.out.println("Perfume " + nome + " encontrado.");
@@ -55,14 +59,17 @@ public class PerfumeList {
             System.out.println("Perfume não encontrado!");
         }
     }
+        //método para contar os perfumes da lista
          public void quantidadePerfumes() {
         System.out.println("Quantidade de perfumes cadastrados no MARTINHO PARFUM: " + perfume.size());
     }
          
-// criar vetor para voltar a primeira lista neste espaço com for
-         
+
+        
+        //método para ordenar perfumes em forma alfabética 
          public void ordenarPerfumes() {
          Collections.sort(perfume);
         System.out.println("Perfumes ordenados com sucesso!!!");
     }
+         
 }
